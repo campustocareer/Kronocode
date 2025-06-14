@@ -66,21 +66,21 @@ const About = () => {
 
                 <div className="space-y-6 text-navy-600">
                   <p>
-                    <b>Kronocode Solutions LLC</b> began with a bold vision in <b>2020</b>,
-                    rooted in the heart of the United States—to bridge the gap
-                    between exceptional talent and growing businesses through
-                    innovative consulting and staffing solutions. What started
-                    as a small team with big dreams quickly evolved into a
-                    trusted partner for companies seeking transformation through
-                    technology.{" "}
+                    <b>Kronocode Solutions LLC</b> began with a bold vision in{" "}
+                    <b>2020</b>, rooted in the heart of the United States—to
+                    bridge the gap between exceptional talent and growing
+                    businesses through innovative consulting and staffing
+                    solutions. What started as a small team with big dreams
+                    quickly evolved into a trusted partner for companies seeking
+                    transformation through technology.{" "}
                   </p>
                   <p>
                     Recognizing the global demand for agile digital solutions
                     and reliable tech professionals, we expanded operations to
-                    India in <b>2023</b>, establishing a strong offshore delivery
-                    model. This move enabled us to blend global reach with local
-                    expertise, offering 24/7 support and cost-effective
-                    solutions without compromising quality.{" "}
+                    India in <b>2023</b>, establishing a strong offshore
+                    delivery model. This move enabled us to blend global reach
+                    with local expertise, offering 24/7 support and
+                    cost-effective solutions without compromising quality.{" "}
                   </p>
                   <p>
                     Over the years, we have grown into a full-service firm,
@@ -161,62 +161,42 @@ const About = () => {
         </section>
       </ParallaxSection>
 
-      {/* Our Team */}
       <ParallaxSection>
         <section className="section">
           <div className="container">
-            <SectionHeading
-              title="Meet Our Team"
-              subtitle="Our talented team of experts is passionate about delivering exceptional results for our clients."
-            />
+            <SectionHeading title="Meet Our Team" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <FloatingCard>
-                <TeamMember
-                  name="Alex Rodriguez"
-                  position="CEO & Founder"
-                  image="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  linkedin="https://linkedin.com"
-                  twitter="https://twitter.com"
-                  delay={0}
-                />
-              </FloatingCard>
-              <FloatingCard>
-                <TeamMember
-                  name="Sarah Johnson"
-                  position="CTO"
-                  image="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  linkedin="https://linkedin.com"
-                  twitter="https://twitter.com"
-                  delay={1}
-                />
-              </FloatingCard>
-              <FloatingCard>
-                <TeamMember
-                  name="Michael Chen"
-                  position="Director of Engineering"
-                  image="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  linkedin="https://linkedin.com"
-                  twitter="https://twitter.com"
-                  delay={2}
-                />
-              </FloatingCard>
-              <FloatingCard>
-                <TeamMember
-                  name="Emma Davis"
-                  position="Head of Design"
-                  image="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  linkedin="https://linkedin.com"
-                  twitter="https://twitter.com"
-                  delay={3}
-                />
-              </FloatingCard>
-            </div>
+            <motion.p
+              className="text-gray-700 text-lg mt-6 max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              At <strong>Kronocode Solutions LLC</strong>, we believe that great
+              results come from great people. Our leadership team brings decades
+              of combined experience in{" "}
+              <strong>technology, staffing, consulting, and innovation</strong>.
+              We’re driven by a shared passion to empower businesses and
+              individuals by delivering tailored solutions and real impact
+              across the globe.
+            </motion.p>
+
+            <motion.p
+              className="text-gray-600 text-md mt-6 max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              From strategic advisors to technical leads, our diverse team
+              collaborates seamlessly across continents—blending expertise with
+              empathy to ensure every project is handled with precision, care,
+              and commitment to your success.
+            </motion.p>
           </div>
         </section>
       </ParallaxSection>
-
-     
 
       {/* Why Clients Choose Us */}
       <ParallaxSection>
