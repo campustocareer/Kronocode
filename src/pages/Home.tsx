@@ -5,17 +5,48 @@ import {
   LineChart,
   MessageSquare,
   ChevronRight,
+   Gamepad2,  BarChart3
 } from "lucide-react";
-import SEO from "../components/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
-import ServiceCard from "../components/ui/ServiceCard";
 import StatsSection from "../components/sections/StatsSection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import IndustriesSection from "../components/sections/IndustriesSection";
 import ParallaxSection from "../components/ui/ParallaxSection";
 import AnimatedText from "../components/ui/AnimatedText";
 import GradientButton from "../components/ui/GradientButton";
-import FloatingCard from "../components/ui/FloatingCard";
+import ParticleBackground from "../components/ParticleBackground";
+import ServiceCard from "../components/serviceCard";
+import SEO from "../components/SEO";
+
+const services = [
+  {
+    title: "IT Consulting",
+    description:
+      "Strategic technology consulting to solve complex business challenges and drive digital transformation.",
+    icon: <LineChart className="w-full h-full text-indigo-400"/>,
+    imageUrl:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
+    link: "/services/it-consulting",
+  },
+  {
+    title: "Staff Augmentation",
+    description:
+      "Access to top-tier tech talent to enhance your team's capabilities and accelerate project delivery.",
+    icon: <Users className="w-full h-full text-indigo-400" />,
+    imageUrl:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
+    link: "/services/staff-augmentation",
+  },
+  {
+    title: "Web Development",
+    description:
+      "Custom web applications and responsive websites built with the latest technologies.",
+    icon: <Code className="w-full h-full text-indigo-400" />,
+    imageUrl:
+      "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
+    link: "/services/web-development",
+  },
+];
 
 const Home = () => {
   return (
@@ -28,80 +59,72 @@ const Home = () => {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-10 -z-20"></div>
-
-        <div className="container">
-          <div className="max-w-3xl">
-            <AnimatedText
-              text="Empowering Growth with Global Staffing & Strategic Consulting"
-className="text-4xl md:text-5xl lg:text-4xl font-poppins font-bold leading-relaxed mb-8"
-            />
-
-            <motion.p
-              className="text-xl text-navy-600 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              Empower your business with Kronocode's expert consulting,
-              staffing, and web development services. We turn your technological
-              challenges into opportunities for growth.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <GradientButton to="/services">
-                Explore Our Services
-              </GradientButton>
-              <GradientButton to="/contact">Contact Us</GradientButton>
-            </motion.div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <ParticleBackground />
+        <div className="container relative z-10 text-center px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-4xl font-bold mb-8 text-black"
+          >
+            <span className="bg-gradient-to-r from-secondary-500 to-primary-600 bg-clip-text text-transparent">
+              Kronocode Solutions
+            </span>{" "}
+            – Staffing Brilliance. Building Futures
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-xl md:text-2xl mb-8 text-black max-w-3xl mx-auto"
+          >
+            Empower your business with Kronocode's expert consulting, staffing,
+            and web development services. We turn your technological challenges
+            into opportunities for growth.
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-12 justify-center items-center mt-24"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            <GradientButton to="/services">Explore Our Services</GradientButton>
+            <GradientButton to="/contact">Contact Us</GradientButton>
+          </motion.div>
         </div>
+        <div className="absolute inset-0 bg-white opacity-10 z-0"></div>
       </section>
 
       {/* Services Section */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            title="Our Services"
-            subtitle="We offer a comprehensive suite of technology services to help your business succeed in the digital landscape."
-          />
+      <section id="services" className="section bg-gray-100 py-20">
+        <div className="container mx-auto px-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Provide</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Innovative technology solutions designed to align with your business needs and accelerate growth.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FloatingCard>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
               <ServiceCard
-                title="IT Consulting"
-                description="Strategic technology consulting to solve complex business challenges and drive digital transformation initiatives."
-                icon={<LineChart size={32} />}
-                delay={0}
+                key={index}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                imageUrl={service.imageUrl}
+                link={service.link}
+                hideLink = {true}
+                delay={index}
               />
-            </FloatingCard>
-            <FloatingCard>
-              <ServiceCard
-                title="Staff Augmentation"
-                description="Access to top-tier tech talent to enhance your team's capabilities and accelerate project delivery."
-                icon={<Users size={32} />}
-                delay={1}
-              />
-            </FloatingCard>
-            <FloatingCard>
-              <ServiceCard
-                title="Web Development"
-                description="Custom web applications and responsive websites built with the latest technologies and best practices."
-                icon={<Code size={32} />}
-                delay={2}
-              />
-            </FloatingCard>
-          </div>
-
-          <div className="text-center mt-12">
-            <GradientButton to="/services">View All Services</GradientButton>
+            ))}
           </div>
         </div>
       </section>
@@ -129,14 +152,12 @@ className="text-4xl md:text-5xl lg:text-4xl font-poppins font-bold leading-relax
                 />
               </motion.div>
             </ParallaxSection>
-
             <div>
               <SectionHeading
                 title="Why Choose Kronocode"
                 subtitle="We combine technical expertise with business acumen to deliver solutions that drive real results."
                 centered={false}
               />
-
               <div className="space-y-6">
                 {[
                   {
@@ -182,7 +203,6 @@ className="text-4xl md:text-5xl lg:text-4xl font-poppins font-bold leading-relax
                   </motion.div>
                 ))}
               </div>
-
               <motion.div
                 className="mt-8"
                 initial={{ opacity: 0, y: 10 }}
@@ -214,7 +234,6 @@ className="text-4xl md:text-5xl lg:text-4xl font-poppins font-bold leading-relax
         >
           <div className="bg-[url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-10 mix-blend-overlay w-full h-full"></div>
         </ParallaxSection>
-
         <div className="container text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

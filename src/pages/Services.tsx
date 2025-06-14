@@ -57,7 +57,7 @@ const Services = () => {
             subtitle="Explore our full range of services designed to help your business leverage technology for growth and innovation."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FloatingCard>
               <ServiceCard
                 title="IT Consulting"
@@ -90,7 +90,7 @@ const Services = () => {
                 delay={3}
               />
             </FloatingCard>
-          </div>
+          </div> */}
         </div>
       </section>
 

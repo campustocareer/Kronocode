@@ -1,67 +1,74 @@
-import { motion } from 'framer-motion';
-import { Building2, Stethoscope, GraduationCap, ShoppingBag, Briefcase, Factory } from 'lucide-react';
+import { DollarSign, Stethoscope, GraduationCap, ShoppingBag, Briefcase, Factory } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
+import ServiceCard from '../serviceCard';
 
 const industries = [
   {
-    icon: <Building2 size={32} />,
     title: "Financial Services",
     description: "Custom solutions for banks, insurance companies, and fintech startups.",
+    icon: <DollarSign className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=1600&q=80",
+    link: "/industries/financial",
   },
   {
-    icon: <Stethoscope size={32} />,
     title: "Healthcare",
-    description: "HIPAA-compliant systems for healthcare providers and medical technology companies.",
+    description: "HIPAA-compliant systems for healthcare providers and med-tech companies.",
+    icon: <Stethoscope className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1470&q=80",
+    link: "/industries/healthcare",
   },
   {
-    icon: <GraduationCap size={32} />,
     title: "Education",
-    description: "Digital learning platforms and administrative systems for educational institutions.",
+    description: "Digital platforms and learning systems for educational institutions.",
+    icon: <GraduationCap className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1470&q=80",
+    link: "/industries/education",
   },
   {
-    icon: <ShoppingBag size={32} />,
     title: "Retail & E-commerce",
-    description: "Scalable solutions for online stores and retail management systems.",
+    description: "Scalable solutions for eCommerce and retail management.",
+    icon: <ShoppingBag className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1470&q=80",
+    link: "/industries/retail",
   },
   {
-    icon: <Briefcase size={32} />,
     title: "Professional Services",
-    description: "Business automation and workflow optimization for service providers.",
+    description: "Automation and workflow tools for service-based businesses.",
+    icon: <Briefcase className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1470&q=80",
+    link: "/industries/professional",
   },
   {
-    icon: <Factory size={32} />,
     title: "Manufacturing",
-    description: "Industrial automation and supply chain management solutions.",
+    description: "Industrial automation and smart supply chain systems.",
+    icon: <Factory className="w-full h-full text-white" />,
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1470&q=80",
+    link: "/industries/manufacturing",
   },
 ];
 
 const IndustriesSection = () => {
   return (
-    <section className="section bg-gray-50">
+    <section className="section bg-gray-100" id="industries">
       <div className="container">
         <SectionHeading
           title="Industries We Serve"
-          subtitle="We deliver tailored technology solutions across diverse sectors, helping businesses innovate and grow."
+          subtitle="Tailored technology solutions across sectors to help businesses innovate and grow."
         />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry, index) => (
-            <motion.div
+            <ServiceCard
               key={index}
-              className="card p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="mb-4 p-3 bg-primary-50 rounded-lg w-fit">
-                <div className="text-primary-600">
-                  {industry.icon}
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{industry.title}</h3>
-              <p className="text-navy-600">{industry.description}</p>
-            </motion.div>
+              title={industry.title}
+              description={industry.description}
+              icon={industry.icon}
+              imageUrl={industry.imageUrl}
+              link={industry.link}
+              hideLink = {true}
+
+              delay={index}
+            />
           ))}
         </div>
       </div>

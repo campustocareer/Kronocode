@@ -70,7 +70,7 @@ const Contact = () => {
                     <h3 className="font-semibold text-lg mb-1">Visit Us</h3>
                     <p className="text-navy-600">
                       1309 COFFEEN AVE STE1200<br />
-                      Silicon Valley, CA 94085<br />
+                      SHERIDAN, WY 82801<br />
                       United States
                     </p>
                   </div>
@@ -103,9 +103,6 @@ const Contact = () => {
                       <a href="mailto:info@kronocode.com" className="hover:text-primary-600 transition-colors">
                         info@kronocode.com
                       </a><br />
-                      <a href="mailto:support@kronocode.com" className="hover:text-primary-600 transition-colors">
-                        support@kronocode.com
-                      </a>
                     </p>
                   </div>
                 </motion.div>
@@ -124,10 +121,10 @@ const Contact = () => {
                     <h3 className="font-semibold text-lg mb-1">Call Us</h3>
                     <p className="text-navy-600">
                       <a href="tel:+1234567890" className="hover:text-primary-600 transition-colors">
-                        +1 (123) 456-7890
+                        +1-(715)-629-3364
                       </a><br />
                       <a href="tel:+1987654321" className="hover:text-primary-600 transition-colors">
-                        +1 (987) 654-3210
+                        +1-(909)-403-3021
                       </a>
                     </p>
                   </div>
