@@ -173,7 +173,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              At <strong>Kronocode Solutions LLC</strong>, we believe that great
+              At <strong>Kronocode Solutions</strong>, we believe that great
               results come from great people. Our leadership team brings decades
               of combined experience in{" "}
               <strong>technology, staffing, consulting, and innovation</strong>.
